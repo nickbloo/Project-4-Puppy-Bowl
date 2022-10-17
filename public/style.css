@@ -20,3 +20,27 @@ html, body {
 h1 {
     text-align: center;
 }
+
+#homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav {
+    padding: 1%;
+    font-size: larger;
+}
+
+.navbar-element {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+}
+
+.navbar-element:hover {
+    color: lightblue;
+}

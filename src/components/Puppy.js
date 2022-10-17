@@ -26,7 +26,6 @@ const PuppyComponent = () => {
 
     return (
         <div id="container">
-            <h1>Welcome to Puppy Bowl</h1>
             {
                 puppy && puppy.length ? puppy.map((eachPuppy, idx) => {
                     console.log(eachPuppy)
