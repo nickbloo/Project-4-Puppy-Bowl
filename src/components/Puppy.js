@@ -25,13 +25,14 @@ const PuppyComponent = () => {
 
 
     return (
-        <div>
+        <div id="container">
+            <h1>Welcome to Puppy Bowl</h1>
             {
                 puppy && puppy.length ? puppy.map((eachPuppy, idx) => {
                     console.log(eachPuppy)
-                    return <div key={idx}>
-                        <h1>Puppy name: {eachPuppy.name}</h1>
-                        <img src={eachPuppy.imageUrl} height="100" width="100"/>
+                    return <div key={idx} className="puppycell">
+                        <h2>Puppy name: {eachPuppy.name}</h2>
+                        <img src={eachPuppy.imageUrl} height="200" width="200"/>
                     </div>
                 }) : <div>Loading...</div>
                 

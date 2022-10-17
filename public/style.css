@@ -1,0 +1,22 @@
+html, body {
+    color-scheme: dark;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-evenly;
+}
+
+.puppycell {
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+
+h1 {
+    text-align: center;
+}
