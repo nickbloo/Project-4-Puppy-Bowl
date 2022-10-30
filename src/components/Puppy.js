@@ -1,37 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link, useOutletContext, useParams } from "react-router-dom";
 
 const PuppyComponent = () => {
 
-    const [puppy, setPuppy] = useState([])
-
-    useEffect(() => {
-
-        async function fetchPuppyData() {
-
-            try {
-                const response = await fetch ("https://fsa-puppy-bowl.herokuapp.com/api/COHORT-NAME/players");
-                const data = await response.json();
-                console.log("I am the data: ", data.data.players)
-
-                setPuppy(data.data.players)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-    fetchPuppyData();
-
-    }, [])
-
+    const renderedPuppies = useOutletContext();
 
     return (
         <div id="container">
             {
-                puppy && puppy.length ? puppy.map((eachPuppy, idx) => {
-                    console.log(eachPuppy)
+                renderedPuppies && renderedPuppies.length ? renderedPuppies.map((eachPuppy, idx) => {
                     return <div key={idx} className="puppycell">
                         <h2>Puppy name: {eachPuppy.name}</h2>
                         <img src={eachPuppy.imageUrl} height="200" width="200"/>
+                        <br />
+                        <Link to={`/puppies/${idx}`}>Read more about this puppy</Link>
                     </div>
                 }) : <div>Loading...</div>
                 

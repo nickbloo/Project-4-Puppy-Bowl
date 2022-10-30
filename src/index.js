@@ -7,6 +7,7 @@ import PuppyComponent from './components/Puppy';
 import AboutUs from './components/AboutUs';
 import Settings from './components/Settings';
 import ErrorPage from './components/ErrorPage';
+import PuppyDetails from './components/PuppyDetails';
 
 
 const appElement = document.getElementById("app");
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: "/puppies",
                 element: <PuppyComponent />
+            },
+            {
+                path: "/puppies/:id",
+                element: <PuppyDetails />
             }
         ]
     }
